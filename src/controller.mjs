@@ -1,0 +1,17 @@
+export default class Controller{
+  constructor({ view }){
+    this.view = view
+  }
+  static initialize(dependencies){
+    const instance = new Controller(dependencies)
+    return instance._init()
+  }
+
+  _init(){
+    this.view.configureStartRecordingButton()
+  }
+
+  async onStartRecording() {
+    console.log('iniciou a gravação')
+  }
+}
